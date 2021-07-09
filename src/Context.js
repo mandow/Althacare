@@ -50,15 +50,16 @@ firebase.auth().signInWithEmailAndPassword(email, password)
         
   
 }
-consulta = () =>{}
-
-
-
-
+checkCases = () =>{
+  
+}
   render() {
     return (
       <myContext.Provider value=
-      {{ state: this.state, checkLogin: this.checkLogin,  }}>
+      {{ state: this.state, 
+        checkLogin: this.checkLogin, 
+        checkCases: this.checkCases, 
+       }}>
         {this.props.children}
       </myContext.Provider>
     )

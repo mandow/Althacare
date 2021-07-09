@@ -1,12 +1,4 @@
 import React, { Component } from 'react'
-import ExpedienteTemplate from './ExpedienteTemplate';
-
-const datos = [
-    { nombre: 'Comprobante de comicilio', url: 'https://www.uab.edu/vsrc/images/manuals/How_to_create_a_read_only_PDF.pdf', FechaCulminacion: '19/5/2021 16:1:11' },
-    { nombre: 'Comprobante de nomina', url: 'https://www.uab.edu/vsrc/images/manuals/How_to_create_a_read_only_PDF.pdf', FechaCulminacion: '19/5/2021 16:1:11' },
-
-];
-
 export default class Expediente extends Component {
     render(props) {
         return (
@@ -35,8 +27,8 @@ export default class Expediente extends Component {
                         <div className="bd-example mb-3">
                             <form>
                                 <div className="form-group">
-                                    <label htmlFor="exampleFormControlFile1">Agrega imagen del comprobante de domicilio</label>
-                                    <input type="file" className="form-control" id="exampleFormControlFile1" />
+                                    <label htmlFor="exampleFormControlFile2">Agrega imagen del comprobante de domicilio</label>
+                                    <input type="file" className="form-control" id="exampleFormControlFile2" />
                                 </div>
                             </form>
                         </div>
