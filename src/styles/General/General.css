@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: 'Titillium' !important;
+    font-size: 1rem !important;
+    font-weight: 400  !important;
+    line-height: 1.5  !important;
+    color: #5B6770  !important;
+    background-color: #fff ;
+}
+.text-black{
+    color: #7C878E;
+}
+.text-red{
+   color: #EF3340;
+}
+.bg-althacare-red{
+    background-color: #EF3340;
+    color: #FFF;
+}
+.bg-althacare-black{
+    background-color: #7C878E;
+    color: #FFF;
+}
+.bg-althacare-black-bold{
+    background-color: #5B6770;
+    color: #FFF;
+}
+.bg-althacare-light{
+    background-color: #f8f9fe;
+}
+.text-black-bold{
+    color: #5B6770;
+}
+.separator {
+    margin-bottom: 7vh;
+  }
+  .bton {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-althacare-primary{
+    color: #EF3340;
+    background-color: #FFF;
+    border-color: #EF3340; 
+}
+
+.btn-althacare-primary :hover{
+    color: #EF3340 !important;
+}
+
+
+.btn-althacare-primary-invert{
+    color: #FFF;
+    background-color: #EF3340;
+    border-color: #FFF; 
+}
+.btn-althacare-secondary{
+    color: #7C878E;
+    background-color: #FFF;
+    border-color: #7C878E; 
+}
+.btn-althacare-secondary-invert{
+    color: #FFF;
+    background-color: #7C878E;
+    border-color: #FFF; 
+}

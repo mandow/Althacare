@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home'
+import Panel from './pages/Panel'
+import Login from './pages/Login'
+import './styles/General/General.css'
+import {MyProvider} from './Context';
+import Casos from './components/Panel/Casos/Casos';
+import Facturas from './components/Panel/Facturas/Facturas';
+import AgregarCaso from './components/Panel/Casos/AgregarCaso'
+import EditarCaso from './components/Panel/Casos/EditarCaso'
 
-function App() {
+class App extends Component {
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyProvider >
+        <Router>
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/panel" component={Panel} />
+            <Route exact path="/panel/casos" component={Casos} />
+            <Route exact path="/panel/agregar-caso" component={AgregarCaso} />
+            <Route exact path="/panel/editar-caso" component={EditarCaso}/>
+            <Route exact path="/panel/facturas" component={Facturas} />
+            </Switch>
+        </Router>
+        </MyProvider>
     </div>
   );
+  }
 }
 
 export default App;
