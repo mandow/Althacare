@@ -25,9 +25,11 @@ export class MyProvider extends Component {
 
   state = {
     cases: [],
-    editcase:'',
-    usuario:'',
-    page:''
+    editcase: '',
+    usuario: '',
+    page: '',
+    case: [],
+    isLoading: true
   }
 
 
@@ -58,9 +60,8 @@ export class MyProvider extends Component {
   checkCases = () => {
     const dbRef = firebase.database().ref('ROCHE');
     dbRef.child('CASES').get().then((snapshot) => {
-         if (snapshot.exists()) {
+      if (snapshot.exists()) {
         const data = snapshot.val();
-
         this.setState({
           cases: data
         });
@@ -72,29 +73,53 @@ export class MyProvider extends Component {
     });
   }
 
-  editCase = (CasoID) => {
+  getCase = (caseid) => {
+    const dbRef = firebase.database().ref('ROCHE');
+    dbRef.child('CASES/' + caseid).get().then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+
         this.setState({
-          editcase: CasoID
+          case: data
         });
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
   }
 
-  changePage= (page) => {
+  editCase = (CasoID) => {
     this.setState({
-      page:page 
+      editcase: CasoID
     });
-}
+  }
+
+  changePage = (page) => {
+    this.setState({
+      isLoading: false
+    });
+  }
+  chargedComponent = (page) => {
+    this.setState({
+      page: page
+    });
+  }
 
 
 
   render() {
     return (
-      <myContext.Provider value={{ checkLogin: this.checkLogin, 
-      checkCases: this.checkCases, 
-      state: this.state, 
-      editCase: this.editCase, 
-      changePage: this.changePage, 
-      recargar: this.recargar, 
-      busTyping: this.busTyping }}>
+      <myContext.Provider value={{
+        checkLogin: this.checkLogin,
+        checkCases: this.checkCases,
+        state: this.state,
+        editCase: this.editCase,
+        changePage: this.changePage,
+        getCase: this.getCase,
+        chargedComponent: this.chargedComponent
+      }}>
         {this.props.children}
       </myContext.Provider>
     )

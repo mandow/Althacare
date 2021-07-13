@@ -10,14 +10,14 @@ export default class Casos extends Component {
         this.context.changePage('panel-casos')
         var IDUSER = '';
         this.context.checkCases(IDUSER);
-        //console.log(this.context.state.Casos);
+        console.log(this.context.state);
     }
     render() {
 
-        const Casos = Object.keys(this.context.state.cases).map((product, i) => {
-            const caso = this.context.state.cases[product]
+        const Casos = Object.keys(this.context.state.cases).map((element, i) => {
+            const caso = this.context.state.cases[element]
             return (
-                <tr key={caso.id}>
+                <tr key={caso.ID}>
                     <td> {caso.ID}</td>
                     <td> {caso.Status}</td>
                     <td> {caso.Patient.Name}</td>
@@ -29,9 +29,11 @@ export default class Casos extends Component {
                         <Link 
                         to={{
                             pathname: "/panel/editar-caso",
-                            //search: `?ID= ${caso.ID}`
+                            search: `caseid=${caso.ID}`
                         }}>
-                            <button className="btn btn-danger"> Ver detalles</button>
+                            <button className="btn btn-danger" onClick={
+                                    (event) => {this.context.editCase(caso.ID)}
+                                }> Ver detalles</button>
                         </Link>
                     </td>
                 </tr>

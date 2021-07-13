@@ -9,7 +9,6 @@ import Logistica from '../../assets/images/home/logisticapil.png'
 import Hospitales from '../../assets/images/home/hospitalespil.png'
 import ContactoColor from '../../assets/images/home/bgcontactocolor.jpg'
 import { Link } from 'react-router-dom';
-import home from '../../pages/Home';
 
 export default class Home extends Component {
     render() {
@@ -37,85 +36,50 @@ export default class Home extends Component {
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-white mb-md-4 ">
                     <div className="container-fluid">
-                        <Link></Link>
-                        
-                        <a className="navbar-brand" href={home}>
+
+                        <div className="navbar-brand" >
                             <img
-                                src={
-                                    Logo
-                                }
+                                src={Logo}
                                 alt="logo-althacare"
                             />
-                        </a>
-                        
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span className="navbar-toggler-icon" />
-                        </button>
+                        </div>
+
+
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav m-auto">
                                 <li className="nav-item fw-bold">
-                                    <a
-                                        className="nav-link active"
-                                        aria-current="page"
-                                        href="/"
-                                        style={{ color: "#535353!important" }}
-                                    >
+                                    <Link to="" className="nav-link active" style={{ color: "#535353!important" }}>
                                         Ubicacion
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-item fw-bold">
-                                    <a
-                                        className="nav-link active"
-                                        aria-current="page"
-                                        href="/"
-                                        style={{ color: "#535353!important" }}
-                                    >
+                                    <Link to="" className="nav-link active" style={{ color: "#535353!important" }}>
                                         Especialidades
-                                    </a>
+                                    </Link>
+
                                 </li>
                                 <li className="nav-item fw-bold">
-                                    <a
-                                        className="nav-link active"
-                                        aria-current="page"
-                                        href="/"
-                                        style={{ color: "#535353!important" }}
-                                    >
+                                    <Link to="" className="nav-link active" style={{ color: "#535353!important" }}>
                                         Pacientes
-                                    </a>
+                                    </Link>
+
                                 </li>
                                 <li className="nav-item fw-bold">
-                                    <a
-                                        className="nav-link active"
-                                        aria-current="page"
-                                        href="/"
-                                        style={{ color: "#535353!important" }}
-                                    >
+                                    <Link to="" className="nav-link active" style={{ color: "#535353!important" }}>
                                         Servicios
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-item fw-bold">
-                                    <a
-                                        className="nav-link active"
-                                        aria-current="page"
-                                        href="/"
-                                        style={{ color: "#535353!important" }}
-                                    >
+                                    <Link to="" className="nav-link active" style={{ color: "#535353!important" }}>
                                         Corporativo
-                                    </a>
+                                    </Link>
+
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <hr></hr>
+                <hr />
                 <div className="">
                     <div className="separator" />
                     <div id="main" className="site-main">
@@ -129,16 +93,7 @@ export default class Home extends Component {
                                                 className="post-11 page type-page status-publish"
                                             >
                                                 <div className="entry-content post-content">
-                                                    <div
-                                                        id="inicio"
-                                                        className="vc_row wpb_row vc_row-fluid vc_custom_1551990081937"
-                                                    >
-                                                        <div className="wpb_column vc_column_container vc_col-sm-12">
-                                                            <div className="vc_column-inner ">
-                                                                <div className="wpb_wrapper"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                     <div id="nosotros" className="row">
                                                         <div className="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                                                             <div className="vc_column-inner ">
@@ -236,11 +191,10 @@ export default class Home extends Component {
                                                                                 >
                                                                                     La propuesta de valor de
                                                                                     <span style={{ color: "#d63440" }}>
-                                                                                        {" "}
                                                                                         <strong>
                                                                                             althacare<sup>®</sup>
                                                                                         </strong>
-                                                                                    </span>{" "}
+                                                                                    </span>
                                                                                     se basa en mejorar la salud de
                                                                                     <br /> los pacientes dándoles acceso a la
                                                                                     mejor medicina del mundo.
@@ -471,8 +425,6 @@ export default class Home extends Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="vc_row-full-width vc_clearfix" />
-                                                    <div className="vc_row-full-width-before" />
                                                     <div
                                                         id="especialidades"
                                                         data-vc-full-width="true"
@@ -488,7 +440,7 @@ export default class Home extends Component {
                                                                         <figure className="wpb_wrapper vc_figure">
                                                                             <div className="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img
-                                                                                    className="vc_single_image-img "
+                                                                                    className="img-fluid"
                                                                                     src={Logo}
                                                                                     width={190}
                                                                                     height={54}
@@ -521,7 +473,7 @@ export default class Home extends Component {
                                                                         <figure className="wpb_wrapper vc_figure">
                                                                             <div className="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img
-                                                                                    className="vc_single_image-img "
+                                                                                    className="img-fluid "
                                                                                     src={EspecialidadesHuman}
                                                                                     width={580}
                                                                                     height={613}
@@ -706,12 +658,11 @@ export default class Home extends Component {
                                                                         <div className="wpb_wrapper">
                                                                             <p>
                                                                                 <img
-                                                                                    className="aligncenter wp-image-150 size-full"
+                                                                                    className="aligncenter img-fluid"
                                                                                     src={Necesidades}
                                                                                     alt="necesidades althacare"
                                                                                     width={371}
                                                                                     height={332}
-                                                                                    sizes="(max-width: 371px) 100vw, 371px"
                                                                                 />
                                                                             </p>
                                                                             <h4>
@@ -764,12 +715,11 @@ export default class Home extends Component {
                                                                         <div className="wpb_wrapper">
                                                                             <p>
                                                                                 <img
-                                                                                    className="aligncenter wp-image-152 size-full"
+                                                                                    className="img-fluid"
                                                                                     src={Logistica}
                                                                                     alt="losgistica althacare"
                                                                                     width={371}
                                                                                     height={332}
-                                                                                    sizes="(max-width: 371px) 100vw, 371px"
                                                                                 />
                                                                             </p>
                                                                             <h4>
@@ -821,12 +771,11 @@ export default class Home extends Component {
                                                                         <div className="wpb_wrapper">
                                                                             <p>
                                                                                 <img
-                                                                                    className="aligncenter wp-image-151 size-full"
+                                                                                    className="aligncenter img-fluid"
                                                                                     src={Hospitales}
                                                                                     alt="hospitales althacare"
                                                                                     width={371}
                                                                                     height={332}
-                                                                                    sizes="(max-width: 371px) 100vw, 371px"
                                                                                 />
                                                                             </p>
                                                                             <h4>
@@ -894,29 +843,23 @@ export default class Home extends Component {
                                                     >
                                                         <div className="col-sm-5 col-lg-4 col-md-4 col-xs-12">
                                                             <div className>
-                                                                <div className>
-                                                                    <div className>
-                                                                        <div className>
-                                                                            <h2
-                                                                                style={{
-                                                                                    textAlign: "left",
-                                                                                    textTransform: "none"
-                                                                                }}
-                                                                            >
-                                                                                <span style={{ color: "#ffffff" }}>
-                                                                                    Acceso a medicamentos
-                                                                                    <br /> que salvan vidas
-                                                                                </span>
-                                                                            </h2>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                <h2
+                                                                    style={{
+                                                                        textAlign: "left",
+                                                                        textTransform: "none"
+                                                                    }}
+                                                                >
+                                                                    <span style={{ color: "#ffffff" }}>
+                                                                        Acceso a medicamentos
+                                                                        <br /> que salvan vidas
+                                                                    </span>
+                                                                </h2>
                                                             </div>
                                                         </div>
                                                         <div className="col-sm-4">
                                                             <div className="vc_column-inner ">
                                                                 <div className="wpb_wrapper">
-                                                                    <div className>
+                                                                    <div >
                                                                         <div className="wpb_wrapper">
                                                                             <p
                                                                                 style={{
@@ -931,25 +874,26 @@ export default class Home extends Component {
                                                                             </p>
                                                                         </div>
                                                                     </div>
-                                                                    <div className>
+                                                                    <div >
                                                                         <div className="wpb_wrapper">
                                                                             <p className="mb-2">
-                                                                                <a
+                                                                                <Link
                                                                                     className="linksinfocontacto"
                                                                                     style={{ color: "#ffffff" }}
-                                                                                    href="mailto:rx@althacare.com"
+                                                                                    to="mailto:rx@althacare.com"
                                                                                 >
                                                                                     rx@althacare.com
-                                                                                </a>
+                                                                                </Link>
                                                                             </p>
                                                                             <p className="mb-2">
-                                                                                <a
+                                                                                <Link
                                                                                     className="linksinfocontacto"
                                                                                     style={{ color: "#ffffff" }}
-                                                                                    href="tel:+528117667724"
+                                                                                    to="tel:+528117667724"
                                                                                 >
                                                                                     +52 (81) 17-66-77-24
-                                                                                </a>
+                                                                                </Link>
+
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -957,8 +901,7 @@ export default class Home extends Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="vc_row-full-width vc_clearfix" />
-                                                </div>
+                                                 </div>
                                             </article>
                                         </div>
                                     </div>

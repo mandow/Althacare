@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import { myContext } from '../../../../Context';
+
+
 export default class Expediente extends Component {
-    render(props) {
+static contextType = myContext;
+    render(props) {      
+        console.log(this.props.data);        
         return (
             <div>
                 <div className="row  justify-content-end" style={{textAlign:'right'}}>
@@ -12,28 +17,20 @@ export default class Expediente extends Component {
                 <div className="pl-lg-4">
                     <div className=" p-3"><div className="form-group">
                         <label className="form-control-label">Diagnóstico</label>
-                        <textarea rows={10} className="form-control" placeholder="Agrega aqui el expediente" />
+                     
+                        <textarea rows={10} className="form-control" placeholder="Agrega aqui el expediente" value={this.props.data.Description} name="Expediente"/>
                     </div>
                     </div>
                     <div className="p-3">
                     <div className="bd-example mb-3">
                             <form>
                                 <div className="form-group">
-                                    <label htmlFor="exampleFormControlFile1">Agrega imagen de alguna Identificación Oficial</label>
-                                    <input type="file" className="form-control" id="exampleFormControlFile1" />
-                                </div>
-                            </form>
-                        </div>
-                        <div className="bd-example mb-3">
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="exampleFormControlFile2">Agrega imagen del comprobante de domicilio</label>
-                                    <input type="file" className="form-control" id="exampleFormControlFile2" />
+                                    <label >Agrega imagen de alguna Identificación Oficial</label>
+                                    <input type="file" className="form-control" id="AgrearExpedienteImg" />
                                 </div>
                             </form>
                         </div>
                         
-
                     </div>
 
                 </div>
