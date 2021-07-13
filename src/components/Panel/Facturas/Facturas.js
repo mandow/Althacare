@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import Layout from '../../General/Layout/Layout'
-
+import { myContext } from '../../../Context';
 export default class Facturas extends Component {
+    static contextType = myContext;
+
+    componentDidMount() {
+        this.context.changePage('panel-facturas')
+    }
     render() {
         return (
             <Layout texto='FACTURAS' descripcion='Este es tu panel administrativo, aqui encontrarás todo lo referente a tus facturas.'>

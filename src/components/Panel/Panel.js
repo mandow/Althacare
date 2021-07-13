@@ -5,11 +5,13 @@ import LogoRoche from '../../assets/images/logos/logo roche.png'
 
 export default class Panel extends Component {
     static contextType = myContext;
-
+componentDidMount(){
+    this.context.changePage('panel-inicio')
+}
     render() {
 
         return (
-            <Layout texto='Bienvenido' descripcion='Este es tu panel administrativo, aqui encontrarás todo lo referente a tus casos y facturas.'>
+            <Layout texto='Bienvenido' descripcion='Este es tu panel administrativo, aqui encontrarás todo lo referente a tus casos y facturas.'  onLoad= {(event) => {this.context.changePage('panel-casos')}}>
                 <div className="p-4">
                     <div className="row">
                         <div className="col-xs-12 col-md-8">

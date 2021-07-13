@@ -6,8 +6,14 @@ import Expediente from './Expediente/Expediente'
 import Exportacion from './Exportacion/Exportacion'
 import Paciente from './Paciente/Paciente'
 import Producto from './Producto/Producto'
+import { myContext } from '../../../Context';
 
 export default class EditarCaso extends Component {
+    static contextType = myContext;
+
+    componentDidMount() {
+       // console.log(this.context.state);
+    }
     render() {
         return (
             <Layout texto='EDITAR CASO' descripcion='Aquí podrás editar un caso nuevo.'>
