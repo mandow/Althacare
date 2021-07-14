@@ -28,14 +28,11 @@ export class MyProvider extends Component {
     editcase: '',
     usuario: '',
     page: '',
-    case: []
+    case: [],
+    pacientes: [],
   }
-
-
-
   componentDidMount() {
   }
-
   //Login FIREBSE
   checkLogin = () => {
     var email = "armando.alvarado@althacare.com";
@@ -101,11 +98,18 @@ export class MyProvider extends Component {
     });
   }
 
+  getPacientes = (caseid) => {
+    this.setState({
+      getPacientes: []
+    });
+  }
+
   render() {
     return (
       <myContext.Provider value={{
         checkLogin: this.checkLogin,
         checkCases: this.checkCases,
+        getPacientes: this.getPacientes,
         state: this.state,
         editCase: this.editCase,
         changePage: this.changePage,
