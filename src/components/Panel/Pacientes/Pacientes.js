@@ -7,6 +7,8 @@ export default class Pacientes extends Component {
 
     componentDidMount() {
         this.context.changePage('panel-pacientes')
+        this.context.getPacientes();
+
     }
     render() {
         return (
