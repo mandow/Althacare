@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
-
+import { myContext } from '../../../../Context';
 export default class Producto extends Component {
+    static contextType = myContext;
+
     render() {
+        if (this.context.state.case.length !== 0) {
+            const Producto = this.context.state.case.Product;
+            console.log(Producto);
         return (
             <div>
                 <div className="row  justify-content-end" style={{ textAlign: 'right' }}>
@@ -24,6 +29,8 @@ export default class Producto extends Component {
                                             <input
                                                 type="text"
                                                 className="form-control"
+                                                name="ProductName"
+                                                value={Producto.Name}
                                             />
                                         </div>
                                     </div>
@@ -184,5 +191,8 @@ export default class Producto extends Component {
                 </div>
             </div>
         )
+    }else{
+        return ('Cargando información...')
+    }
     }
 }

@@ -6,7 +6,8 @@ export default class Layout extends Component {
     static contextType = myContext;
  
     componentDidMount() {
-        //console.log(this.context.state);
+   // console.log(this.context.state);
+        
     }
     render(props) {
  
@@ -40,24 +41,42 @@ export default class Layout extends Component {
                                     (event) => {this.context.changePage('panel-inicio')}
                                 }>
                                 <Link to="/panel" className={ this.context.state.page==='panel-inicio' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
-                                <span data-feather="home" />
-                                        Inicio
+                                         Inicio
                                 </Link>
                                 </li>
                                 <li className="nav-item" onClick={
                                     (event) => {this.context.changePage('panel-casos')}
                                 }>
                                 <Link to="/panel/casos" className={ this.context.state.page==='panel-casos' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
-                                <span data-feather="home" />
-                                Casos
+                                 Casos
                                 </Link>
                                 </li>
                                 <li className="nav-item" onClick={
                                     (event) => {this.context.changePage('panel-facturas')}
                                 }>
                                 <Link to="/panel/facturas" className={ this.context.state.page==='panel-facturas' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
-                                <span data-feather="home" />
-                                Facturas
+                                 Facturas
+                                </Link>
+                                </li>
+                                <li className="nav-item" onClick={
+                                    (event) => {this.context.changePage('panel-pacientes')}
+                                }>
+                                <Link to="/panel/pacientes" className={ this.context.state.page==='panel-pacientes' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
+                                 Pacientes
+                                </Link>
+                                </li>
+                                <li className="nav-item" onClick={
+                                    (event) => {this.context.changePage('panel-productos')}
+                                }>
+                                <Link to="/panel/productos" className={ this.context.state.page==='panel-productos' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
+                                 Productos
+                                </Link>
+                                </li>
+                                <li className="nav-item" onClick={
+                                    (event) => {this.context.changePage('panel-doctores')}
+                                }>
+                                <Link to="/panel/doctores" className={ this.context.state.page==='panel-doctores' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
+                                 Doctores
                                 </Link>
                                 </li>
                             </ul>

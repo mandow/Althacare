@@ -28,8 +28,7 @@ export class MyProvider extends Component {
     editcase: '',
     usuario: '',
     page: '',
-    case: [],
-    isLoading: true
+    case: []
   }
 
 
@@ -98,16 +97,9 @@ export class MyProvider extends Component {
 
   changePage = (page) => {
     this.setState({
-      isLoading: false
-    });
-  }
-  chargedComponent = (page) => {
-    this.setState({
       page: page
     });
   }
-
-
 
   render() {
     return (
@@ -117,8 +109,7 @@ export class MyProvider extends Component {
         state: this.state,
         editCase: this.editCase,
         changePage: this.changePage,
-        getCase: this.getCase,
-        chargedComponent: this.chargedComponent
+        getCase: this.getCase
       }}>
         {this.props.children}
       </myContext.Provider>

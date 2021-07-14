@@ -6,7 +6,8 @@ import LogoRoche from '../../assets/images/logos/logo roche.png'
 export default class Panel extends Component {
     static contextType = myContext;
 componentDidMount(){
-    this.context.changePage('panel-inicio')
+    this.context.changePage('panel-inicio');
+    //console.log(this.context.state)
 }
     render() {
 

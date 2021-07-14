@@ -12,19 +12,16 @@ export default class EditarCaso extends Component {
     static contextType = myContext;
 
     componentDidMount() {
-
         var editcase = queryString.parseUrl(this.props.location.search);
         var caseid = editcase.query.caseid;
-        this.context.editCase(caseid);
         this.context.getCase(caseid);
-        this.context.chargedComponent();
-
-        console.log(this.context.state);
     }
     render() {
-        return (
+        //console.log(this.context.state);
+        if (this.context.state.case !== []) {
+            //console.log(this.context.state.case);
 
-            <Layout texto='EDITAR CASO' descripcion='Aquí podrás editar un caso nuevo.'>
+            return (<Layout texto='EDITAR CASO' descripcion='Aquí podrás editar un caso nuevo.'>
                 <div className="row p-4">
                     <div className="col-xs-12 col-md-2">
                         <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -40,24 +37,23 @@ export default class EditarCaso extends Component {
                         <div className="tab-content" id="v-pills-tabContent">
                             <div className="tab-pane fade show active" id="v-expediente" role="tabpanel" aria-labelledby="v-expediente-tab">
 
-                                {this.context.state.isLoading === false ? <Expediente data={this.context.state.case.Expedient} /> : window.location.href = '/panel/casos'}
-                                {/*this.state.isLoadingCase === false ? 'Cargando Informacion' : <Expediente data={this.context.state.case} />*/}
+                                <Expediente data={this.context.state.case.Expedient} />
 
                             </div>
                             <div className="tab-pane fade" id="v-producto" role="tabpanel" aria-labelledby="v-producto-tab">
-                                <Producto />
+                                <Producto data={this.context.state.case.Product} />
                             </div>
                             <div className="tab-pane fade" id="v-doctor" role="tabpanel" aria-labelledby="v-doctor-tab">
-                                <Doctor />
+                                <Doctor data={this.context.state.case.Doctor} />
                             </div>
                             <div className="tab-pane fade" id="v-paciente" role="tabpanel" aria-labelledby="v-paciente-tab">
-                                <Paciente />
+                                <Paciente data={this.context.state.case.Patient} />
                             </div>
                             <div className="tab-pane fade" id="v-importacion" role="tabpanel" aria-labelledby="v-importacion-tab">
-                                <Exportacion />
+                                <Exportacion caseid={this.context.state.case.ID} />
                             </div>
                             <div className="tab-pane fade" id="v-entrega" role="tabpanel" aria-labelledby="v-entrega-tab">
-                                <Entrega />
+                                <Entrega data={this.context.state.case.Delivery} />
                             </div>
                         </div>
                     </div>
@@ -65,8 +61,11 @@ export default class EditarCaso extends Component {
                 </div>
                 <div className="d-xs-none col-md-1"></div>
 
-            </Layout>
-        )
+            </Layout>)
+        } else {
+            return (<p>Cargando...</p>)
+        }
+
 
 
     }
