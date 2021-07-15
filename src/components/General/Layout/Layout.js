@@ -52,13 +52,6 @@ export default class Layout extends Component {
                                 </Link>
                                 </li>
                                 <li className="nav-item" onClick={
-                                    (event) => {this.context.changePage('panel-facturas')}
-                                }>
-                                <Link to="/panel/facturas" className={ this.context.state.page==='panel-facturas' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
-                                 Facturas
-                                </Link>
-                                </li>
-                                <li className="nav-item" onClick={
                                     (event) => {this.context.changePage('panel-pacientes')}
                                 }>
                                 <Link to="/panel/pacientes" className={ this.context.state.page==='panel-pacientes' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
@@ -79,6 +72,13 @@ export default class Layout extends Component {
                                  Doctores
                                 </Link>
                                 </li>
+                                <li className="nav-item" onClick={
+                                    (event) => {this.context.changePage('panel-facturas')}
+                                }>
+                                <Link to="/panel/facturas" className={ this.context.state.page==='panel-facturas' ? 'nav-link text-danger fw-bold' : 'nav-link text-danger '}>
+                                 Facturas
+                                </Link>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -93,7 +93,7 @@ export default class Layout extends Component {
                         >
                             {this.props.children}
                         </div>
-                        <div id="footer" className="footer p-3 m-3" >
+                        <div id="footer" className="footer p-1 m-2" >
                             Derechos reservados.
                         </div>
                     </main>
