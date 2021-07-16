@@ -7,10 +7,10 @@ export default class AgregarDoctor extends Component {
     componentDidMount() {
         this.context.changePage('panel-doctores');
     }
-
     constructor(props) {
         super(props);
         this.state = {
+            docID: '',
             nombre: '',
             aPaterno: '',
             aMaterno: '',
@@ -32,16 +32,16 @@ export default class AgregarDoctor extends Component {
             pais: '',
             informacionAdicional: ''
         };
+
     }
 
     handleChange = e => {
         const { name, value } = e.target;
         this.setState({ [name]: value });
-        // console.log(this.state);
     }
-
     handleSubmit = e => {
         e.preventDefault();
+
         let nombre = this.state.nombre
         let aPaterno = this.state.aPaterno
         let aMaterno = this.state.aMaterno
@@ -54,10 +54,10 @@ export default class AgregarDoctor extends Component {
         let email = this.state.email
         let telefono = this.state.email
         let telefonoAdicional = this.state.email
-        
+
         let calle = this.state.calle
         let numeroInterior = this.state.numeroInterior
-        let numeroExterior = this.state.numeroExterior
+        //let numeroExterior = this.state.numeroExterior
         let cp = this.state.cp
         let colonia = this.state.colonia
         let ciudad = this.state.ciudad
@@ -65,34 +65,32 @@ export default class AgregarDoctor extends Component {
         let pais = this.state.pais
         let informacionAdicional = this.state.informacionAdicional
 
-        if (nombre !== "" 
-         && aPaterno !== "" 
-         && aMaterno !== ""
-         && fdn !== "" 
-         && genero !== "" 
-         && especialidad !== "" 
-         && cedulaProfesional !== "" 
-         && cedulaEspecialidad !== ""
-         && email !== ""
-         && telefono !== ""
-         && telefonoAdicional !== ""
-         && calle !== ""
-         && numeroInterior !== ""
-         && numeroExterior !== ""
-         && cp !== ""
-         && colonia !== ""
-         && ciudad !== ""
-         && estado !== ""
-         && pais !== ""
-         && informacionAdicional !== ""
-         ) {
+        if (nombre !== ""
+            && aPaterno !== ""
+            && aMaterno !== ""
+            && fdn !== ""
+            && genero !== ""
+            && especialidad !== ""
+            && cedulaProfesional !== ""
+            && cedulaEspecialidad !== ""
+            && email !== ""
+            && telefono !== ""
+            && telefonoAdicional !== ""
+            && calle !== ""
+            && numeroInterior !== ""
+            && cp !== ""
+            && colonia !== ""
+            && ciudad !== ""
+            && estado !== ""
+            && pais !== ""
+            && informacionAdicional !== ""
+        ) {
             this.context.addDoctor(this.state)
         } else {
             alert('Todos los campos son requeridos');
-         }
+        }
         //console.log(this.state);
     }
-
     render() {
 
         return (
@@ -103,9 +101,9 @@ export default class AgregarDoctor extends Component {
                             <div className="form-group">
                                 <p>Datos del Doctor</p>
                                 <hr />
-
                                 <form>
                                     <div className="row">
+                                        <input name="docID" id="docID" value={this.state.docID} hidden onChange={this.handleChange} />
                                         <div className="col-xs-12 col-md-4">
                                             <div className="mb-3">
                                                 <label className="form-label" htmlFor="nombreInput">
@@ -118,7 +116,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="nombre"
                                                     id="nombreInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -134,7 +132,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="aPaterno"
                                                     id="aPaternoInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -150,7 +148,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="aMaterno"
                                                     id="aMaternoInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -165,9 +163,8 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="fdn"
                                                     htmlFor="fdnInput"
-                                                    required="required" 
+                                                    required="required"
                                                     value={this.state.fdn}
-
                                                 />
                                             </div>
 
@@ -201,7 +198,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="especialidad"
                                                     id="especialidadInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -217,7 +214,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="cedulaProfesional"
                                                     id="cedulaProfesionalInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -233,7 +230,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="cedulaEspecialidad"
                                                     id="cedulaEspecialidadInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -251,7 +248,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="email"
                                                     id="emailInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -267,7 +264,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="telefono"
                                                     id="telefonoInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -283,7 +280,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="telefonoAdicional"
                                                     id="telefonoAdicionalInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -301,7 +298,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="calle"
                                                     id="calleInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -317,7 +314,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="numeroInterior"
                                                     id="numeroInteriorInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -333,7 +330,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="numeroExterior"
                                                     id="numeroExteriorInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -349,7 +346,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="cp"
                                                     id="cpInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -365,7 +362,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="colonia"
                                                     id="coloniaInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -381,7 +378,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="ciudad"
                                                     id="ciudadInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -397,7 +394,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="estado"
                                                     id="estadoInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -413,7 +410,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="pais"
                                                     id="paisInput"
-                                                    required="required" 
+                                                    required="required"
                                                 />
                                             </div>
                                         </div>
@@ -430,7 +427,7 @@ export default class AgregarDoctor extends Component {
                                                     onChange={this.handleChange}
                                                     name="informacionAdicional"
                                                     id="informacionAdicionalInput"
-                                                    required="required" 
+                                                    required="required"
                                                 ></textarea>
                                             </div>
                                         </div>
@@ -442,12 +439,10 @@ export default class AgregarDoctor extends Component {
                     </div>
                     <div className="row  justify-content-end mb-4" style={{ textAlign: 'right' }}>
                         <div className="col-xs-12 col-md-4">
-                            <input className="btn btn-primary" type="submit" value="Guardar"/>
+                            <input className="btn btn-primary" type="submit" value="Guardar" />
                         </div>
                     </div>
                 </form>
-
-
             </Layout>
         )
 

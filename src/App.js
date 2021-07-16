@@ -29,21 +29,25 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/panel" component={Panel} />
+
               <Route exact path="/panel/casos" component={Casos} />
-              <Route exact path="/panel/agregar-caso" component={AgregarCaso} />
               <Route path="/panel/editar-caso" component={EditarCaso} />
-              <Route exact path="/panel/facturas" component={Facturas} />
               <Route exact path="/panel/agregar-caso" component={AgregarCaso} />
-              <Route path="/panel/editar-caso" component={EditarCaso} />
+
               <Route exact path="/panel/pacientes" component={Pacientes} />
               <Route exact path="/panel/agregar-paciente" component={AgregarPaciente} />
               <Route path="/panel/editar-paciente" component={EditarPaciente} />
-              <Route exact path="/panel/producto" component={Productos} />
+
+              <Route exact path="/panel/productos" component={Productos} />
               <Route exact path="/panel/agregar-producto" component={AgregarProducto} />
-              <Route path="/panel/editar-productos" component={EditarProducto} />
+              <Route path="/panel/editar-producto" component={EditarProducto} />
+
               <Route exact path="/panel/doctores" component={Doctores} />
               <Route exact path="/panel/agregar-doctor" component={AgregarDoctor} />
               <Route path="/panel/editar-doctor" component={EditarDoctor} />
+              
+              <Route exact path="/panel/facturas" component={Facturas} />
+
             </Switch>
           </Router>
         </MyProvider>

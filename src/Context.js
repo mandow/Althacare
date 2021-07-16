@@ -125,10 +125,10 @@ export class MyProvider extends Component {
     var segundo = date.getSeconds();
     let doctorID = dia + '' + mes + '' + anio + '' + hora + '' + minuto + '' + segundo;
    // console.log(doc);
-   if(doc.doctorID !== '' && doc.doctorID !== null ){
-    var docID=doc.doctorID
+   if(doc.docID !== ''){
+    var docID=doc.docID;
    }else{
-   var docID= doctorID
+   var docID= doctorID;
    }
    firebase.database().ref('ROCHE/DOCTORS/' + docID).set({
       "BirthDate": doc.fdn,
@@ -144,7 +144,7 @@ export class MyProvider extends Component {
         "City": doc.ciudad,
         "Country": doc.pais,
         "ExternalCode": doc.numeroExterior,
-        "ExternalInformation": doc.informacionAdicional,
+        "ExtraInformation": doc.informacionAdicional,
         "InternalCode": doc.numeroInterior,
         "PostalCode": doc.cp,
         "State": doc.estado,
@@ -155,14 +155,15 @@ export class MyProvider extends Component {
       "ProfessionalKey": doc.cedulaProfesional,
       "SecondLastName": doc.aMaterno,
       "Speciality": doc.especialidad,
-      "SpecialityKey": doc.cedulaEspecialidad
+      "SpecialityKey": doc.cedulaEspecialidad,
+      "Gender": doc.genero
     }
       , (error) => {
         if (error) {
           alert('No se logró guardar la información');
         } else {
           alert('Datos guardados correctamente!');
-          window.location.href = "/doctores";
+          window.location.href = "/panel/doctores";
           
         }
       });
@@ -176,7 +177,25 @@ export class MyProvider extends Component {
         this.setState({
           doctors: data
         });
-        console.log(data);
+        //console.log(data);
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+
+  
+  getDoctor = (doctorid) => {
+    const dbRef = firebase.database().ref('ROCHE');
+    dbRef.child('DOCTORS/' + doctorid).get().then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+
+        this.setState({
+          doctor: data
+        });
       } else {
         console.log("No data available");
       }
@@ -196,7 +215,8 @@ export class MyProvider extends Component {
         changePage: this.changePage,
         getCase: this.getCase,
         addDoctor: this.addDoctor,
-        getDoctors:this.getDoctors
+        getDoctors:this.getDoctors,
+        getDoctor:this.getDoctor
       }}>
         {this.props.children}
       </myContext.Provider>

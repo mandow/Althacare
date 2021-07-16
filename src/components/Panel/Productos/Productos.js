@@ -9,7 +9,7 @@ export default class Productos extends Component {
     }
     render() {
         return (
-            <Layout texto='PACIENTES' descripcion='Este es tu panel administrativo, aqui encontrarás todo lo referente a tus pacientes.'>
+            <Layout texto='PRODUCTOS' descripcion='Este es tu panel administrativo, aqui encontrarás todo lo referente a tus medicamentos.'>
                 Productos
             </Layout>
         )
