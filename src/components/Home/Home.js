@@ -80,7 +80,7 @@ export default class Home extends Component {
                     </div>
                 </nav>
                 <hr />
-                <div className="">
+                <div>
                     <div className="separator" />
                     <div id="main" className="site-main">
                         <div id="main-content" className="main-content">
@@ -436,7 +436,7 @@ export default class Home extends Component {
                                                         <div className="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                                                             <div>
                                                                 <div className="wpb_wrapper">
-                                                                    <div className="">
+                                                                    <div>
                                                                         <figure className="wpb_wrapper vc_figure">
                                                                             <div className="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img
@@ -538,7 +538,7 @@ export default class Home extends Component {
                                                                     >
                                                                         <span className="vc_empty_space_inner" />
                                                                     </div>
-                                                                    <div className="">
+                                                                    <div>
                                                                         <div className="wpb_wrapper">
                                                                             <p style={{ textAlign: "justify" }}>
                                                                                 <span style={{ color: "#ffffff" }}>
@@ -567,7 +567,7 @@ export default class Home extends Component {
                                                                     >
                                                                         <span className="vc_empty_space_inner" />
                                                                     </div>
-                                                                    <div className="">
+                                                                    <div>
                                                                         <div className="wpb_wrapper">
                                                                             <p style={{ textAlign: "justify" }}>
                                                                                 <span
@@ -842,7 +842,7 @@ export default class Home extends Component {
                                                         className="row mb-4"
                                                     >
                                                         <div className="col-sm-5 col-lg-4 col-md-4 col-xs-12">
-                                                            <div className>
+                                                            <div>
                                                                 <h2
                                                                     style={{
                                                                         textAlign: "left",

@@ -45,9 +45,12 @@ export class MyProvider extends Component {
   componentDidMount() {
   }
   //Login FIREBSE
-  checkLogin = () => {
-    var email = "armando.alvarado@althacare.com";
-    var password = "123456";
+  checkLogin = (param) => {
+    
+    var email = param.UserLogin;
+    var password = param.passwordLogin;
+    //var email = "armando.alvarado@althacare.com";
+    //var password = "123456";
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
