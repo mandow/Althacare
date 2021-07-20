@@ -39,8 +39,9 @@ export class MyProvider extends Component {
     usuario: '',
     page: '',
     case: [],
-    pacientes: [],
+    patients: [],
     doctors: [],
+    products: [],
   }
   componentDidMount() {
   }
@@ -112,11 +113,26 @@ export class MyProvider extends Component {
     });
   }
 
-  getPacientes = (caseid) => {
-    this.setState({
-      getPacientes: []
+  getPatients = () => {
+    const dbRef = firebase.database().ref('ROCHE');
+    dbRef.child('PATIENTS').get().then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        this.setState({
+          patients: data
+        });
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
     });
   }
+  editPatient= () => {
+   
+    
+  }
+  
 
   addDoctor = (doc) => {
     const date = new Date();
@@ -207,19 +223,43 @@ export class MyProvider extends Component {
     });
   }
 
+  getProducts = () => {
+    const dbRef = firebase.database().ref('ROCHE');
+    dbRef.child('PRODUCTS').get().then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        this.setState({
+          products: data
+        });
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+  editProduct = () => {}
+
   render() {
     return (
       <myContext.Provider value={{
+        state: this.state,
+        changePage: this.changePage,
         checkLogin: this.checkLogin,
         checkCases: this.checkCases,
-        getPacientes: this.getPacientes,
-        state: this.state,
-        editCase: this.editCase,
-        changePage: this.changePage,
         getCase: this.getCase,
+        editCase: this.editCase,
+        addPatient: this.addPatient,
+        getPatients: this.getPatients,
+        getPatient:this.getPatient,
+        editPatient:this.editPatient,
         addDoctor: this.addDoctor,
         getDoctors:this.getDoctors,
-        getDoctor:this.getDoctor
+        editDoctor:this.editDoctor,
+        addProduct:this.addProduct,
+        getProducts:this.getProducts,
+        getProduct: this.getProduct,
+        editProduct:this.editProduct
       }}>
         {this.props.children}
       </myContext.Provider>

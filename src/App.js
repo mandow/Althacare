@@ -12,8 +12,8 @@ import EditarCaso from './components/Panel/Casos/EditarCaso'
 import Doctores from './components/Panel/Doctores/Doctores';
 import Productos from './components/Panel/Productos/Productos';
 import Pacientes from './components/Panel/Pacientes/Pacientes';
-import AgregarPaciente from './components/Panel/Pacientes/Pacientes';
-import EditarPaciente from './components/Panel/Pacientes/Pacientes';
+import AgregarPaciente from './components/Panel/Pacientes/AgregarPaciente';
+import EditarPaciente from './components/Panel/Pacientes/EditarPaciente';
 import AgregarProducto from './components/Panel/Productos/AgregarProducto';
 import EditarProducto from './components/Panel/Productos/EditarProducto';
 import AgregarDoctor from './components/Panel/Doctores/AgregarDoctor'
